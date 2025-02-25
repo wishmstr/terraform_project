@@ -317,7 +317,7 @@ resource "aws_eip" "my_web_eip" {
     instance = aws_instance.my_web[count.index].id
 
     # Have the Elastic IP be within the VPC
-    vpc = true
+    #vpc = true
 
     # Tags
     tags = {
