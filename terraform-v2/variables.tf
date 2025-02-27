@@ -2,7 +2,10 @@
 
 # Region for VPC
 variable "aws_region" {
-  default = "us-east-2"
+  #  default = "us-east-2"
+  description = "AWS region"
+  type        = string
+  sensitive   = true
 }
 
 # CIDR block info 
@@ -89,6 +92,30 @@ variable "db_username" {
 # Database root user password
 variable "db_password" {
   description = "Database master password"
+  type        = string
+  sensitive   = true
+}
+
+variable "aws_secret_key_id" {
+  description = "AWS Secret Key ID"
+  type        = string
+  sensitive   = true
+}
+
+variable "aws_secret_access_key" {
+  description = "AWS Access Key"
+  type        = string
+  sensitive   = true
+}
+
+# Local IP Address 
+variable "terraform_ip" {
+  description = "IP address for local machine"
+  type        = string
+}
+
+variable "aws_terraform_arn" {
+  description = "AWS Role ARN"
   type        = string
   sensitive   = true
 }

@@ -11,3 +11,7 @@
 
 my_kp
 my_kp.*bak
+
+*.tfvars
+
+.terraform.lock.*

@@ -45,11 +45,5 @@ jobs:
     - name: Validate
       run: terraform validate
 
-    - name: Configure aws credentials
-      uses: aws-actions/configure-aws-credentials@v4
-      with:
-        role-to-assume: arn:aws:iam::651706766894:role/Terraform_Project_Agent
-        aws-region: us-east-2
-
     - name: Plan
       run: terraform plan
