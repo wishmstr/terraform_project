@@ -17,14 +17,16 @@ permissions:
 
 concurrency: terraform
 
+defaults:
+  run:
+    working-directory: ./terraform-v2
+
 jobs:
   plan:
     name: Terraform Plan
     runs-on: ubuntu-latest
     steps:
 
-    - name: Set working directory
-      working-directory: ./terraform-v2
     - name: Checkout
       uses: actions/checkout@v4
 
