@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh -i "my_kp" ubuntu@$(terraform output -raw web_public_dns)
