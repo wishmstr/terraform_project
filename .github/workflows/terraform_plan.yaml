@@ -1,5 +1,4 @@
 name: Terraform Plan
-runs-on: ubuntu-latest
 
 on:
   pull_request:
@@ -19,6 +18,7 @@ concurrency: terraform
 jobs:
   plan:
     name: Terraform Plan
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
