@@ -12,6 +12,7 @@
 my_kp
 my_kp.*bak
 
+secrets.tfvars
 *.tfvars
 
 .terraform.lock.*
