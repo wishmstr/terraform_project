@@ -31,3 +31,13 @@ output "database_port" {
   description = "The port of the database"
   value       = aws_db_instance.my_database.port
 }
+
+output "s3_bucket_arn" {
+value = aws_s3_bucket.terraform_state.arn
+description = "The ARN of the S3 bucket"
+}
+
+output "dynamodb_table_name" {
+value = aws_dynamodb_table.terraform_lock.name
+description = "The name of the DynamoDB table"
+}
