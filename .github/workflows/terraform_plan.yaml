@@ -1,4 +1,5 @@
 name: Terraform Plan
+runs-on: ubuntu-latest
 
 on:
   pull_request:
