@@ -19,30 +19,31 @@ jobs:
   plan:
     name: Terraform Plan
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
 
-      - name: Setup
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.10.5
-          terraform_wrapper: false
+    - name: Setup
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: 1.10.5
+        terraform_wrapper: false
 
-      - name: Format
-        run: terraform fmt -recursive -check -diff
+    - name: Format
+      run: terraform fmt -recursive -check -diff
 
-      - name: Init
-        run: terraform init
+    - name: Init
+      run: terraform init
 
-      - name: Validate
-        run: terraform validate
+    - name: Validate
+      run: terraform validate
 
-      - name: Configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::651706766894:role/Terraform_Project_Agent
-          aws-region: us-east-2
+    - name: Configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: arn:aws:iam::651706766894:role/Terraform_Project_Agent
+        aws-region: us-east-2
 
-      - name: Plan
-        run: terraform plan
+    - name: Plan
+      run: terraform plan
