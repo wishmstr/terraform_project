@@ -80,6 +80,7 @@ variable "my_ip" {
   description = "Your IP address"
   type        = string
   sensitive   = true
+  default     = "192.168.0.1"
 }
 
 # Database root user
@@ -87,6 +88,7 @@ variable "db_username" {
   description = "Database master user"
   type        = string
   sensitive   = true
+  default     = "admin"
 }
 
 # Database root user password
@@ -94,6 +96,7 @@ variable "db_password" {
   description = "Database master password"
   type        = string
   sensitive   = true
+  default     = "tutorialdbpassword"
 }
 
 # variable "aws_secret_key_id" {
@@ -115,17 +118,17 @@ variable "terraform_ip" {
   default     = "192.168.0.1"
 }
 
-variable "aws_terraform_arn" {
-  description = "AWS Role ARN"
-  type        = string
-  sensitive   = true
-}
+# variable "aws_terraform_arn" {
+#   description = "AWS Role ARN"
+#   type        = string
+#   sensitive   = true
+# }
 
-variable "state_bucket" {
-  description = "AWS S3 bucket containing state file"
-  type        = string
-  sensitive   = true
-}
+# variable "state_bucket" {
+#   description = "AWS S3 bucket containing state file"
+#   type        = string
+#   sensitive   = true
+# }
 
 # variable "aws_terraform_arn" {
 #   description = "AWS Role ARN"
