@@ -42,7 +42,7 @@ jobs:
     - name: Configure aws credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        role-to-assume: arn:aws:iam::651706766894:role/Terraform_Project_Agent
+        role-to-assume: arn:aws:iam::651706766894:role/terraform_actions_role2
         aws-region: us-east-2
     
     - name: Init
