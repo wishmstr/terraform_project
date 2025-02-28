@@ -1,12 +1,12 @@
 # Variables for main.tf
 
 # Region for VPC
-variable "aws_region" {
-  #  default = "us-east-2"
-  description = "AWS region"
-  type        = string
-  sensitive   = true
-}
+# variable "aws_region" {
+#   #  default = "us-east-2"
+#   description = "AWS region"
+#   type        = string
+#   sensitive   = true
+# }
 
 # CIDR block info 
 variable "vpc_cidr_block" {
@@ -96,22 +96,23 @@ variable "db_password" {
   sensitive   = true
 }
 
-variable "aws_secret_key_id" {
-  description = "AWS Secret Key ID"
-  type        = string
-  sensitive   = true
-}
+# variable "aws_secret_key_id" {
+#   description = "AWS Secret Key ID"
+#   type        = string
+#   sensitive   = true
+# }
 
-variable "aws_secret_access_key" {
-  description = "AWS Access Key"
-  type        = string
-  sensitive   = true
-}
+# variable "aws_secret_access_key" {
+#   description = "AWS Access Key"
+#   type        = string
+#   sensitive   = true
+# }
 
 # Local IP Address 
 variable "terraform_ip" {
   description = "IP address for local machine"
   type        = string
+  default     = "192.168.0.1"
 }
 
 variable "aws_terraform_arn" {
@@ -119,3 +120,21 @@ variable "aws_terraform_arn" {
   type        = string
   sensitive   = true
 }
+
+# variable "aws_terraform_arn" {
+#   description = "AWS Role ARN"
+#   type        = string
+#   sensitive   = true
+# }
+
+# variable "aws_terraform_arn" {
+#   description = "AWS Role ARN"
+#   type        = string
+#   sensitive   = true
+# }
+
+# variable "aws_terraform_arn" {
+#   description = "AWS Role ARN"
+#   type        = string
+#   sensitive   = true
+# }

@@ -38,10 +38,19 @@ jobs:
 
     - name: Format
       run: terraform fmt -recursive -check -diff
-
+    
+    - name: Configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: arn:aws:iam::651706766894:role/Terraform_Project_Agent
+        aws-region: us-east-2
+    
     - name: Init
-      run: terraform init
-
+      run: terraform init \     
+        -backend-config "bucket=${SOME_VAR_STORING_BUCKET_NAME}" \
+        -backend-config "key=${SOME_VAR_STORING_FILE_PATH}" \
+        -backend-config "region=${{ AWS_REGION }}" \
+        
     - name: Validate
       run: terraform validate
 
