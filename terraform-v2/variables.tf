@@ -1,12 +1,12 @@
 # Variables for main.tf
 
 # Region for VPC
-# variable "aws_region" {
-#   #  default = "us-east-2"
-#   description = "AWS region"
-#   type        = string
-#   sensitive   = true
-# }
+variable "aws_region" {
+  default     = "us-east-2"
+  description = "AWS region"
+  type        = string
+  sensitive   = true
+}
 
 # CIDR block info 
 variable "vpc_cidr_block" {
