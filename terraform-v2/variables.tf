@@ -88,7 +88,7 @@ variable "db_username" {
   description = "Database master user"
   type        = string
   sensitive   = true
-  default     = "admin"
+  # default     = "admin"
 }
 
 # Database root user password
@@ -96,7 +96,7 @@ variable "db_password" {
   description = "Database master password"
   type        = string
   sensitive   = true
-  default     = "tutorialdbpassword"
+  # default     = "tutorialdbpassword"
 }
 
 # variable "aws_secret_key_id" {
@@ -115,7 +115,7 @@ variable "db_password" {
 variable "terraform_ip" {
   description = "IP address for local machine"
   type        = string
-  default     = "192.168.0.1"
+  # default     = "192.168.0.1"
 }
 
 # variable "aws_terraform_arn" {

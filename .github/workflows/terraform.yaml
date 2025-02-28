@@ -1,8 +1,9 @@
 name: Terraform Plan
 
 on:
-  workflow_dispatch:
-
+  push:
+    branches:
+      - main
   pull_request:
     types:
       - opened
@@ -10,6 +11,7 @@ on:
       - reopened
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -25,6 +27,11 @@ jobs:
   plan:
     name: Terraform Plan
     runs-on: ubuntu-latest
+    env:
+      TF_VAR_my_ip: ${{ secrets.TERRAFORM_IP }}
+      TF_VAR_db_username: ${{ secrets.TERRAFORM_DBUSER }}
+      TF_VAR_db_password: ${{ secrets.TERRAFORM_DBPASS }}
+    
     steps:
 
     - name: Checkout
@@ -54,5 +61,11 @@ jobs:
     - name: Validate
       run: terraform validate
 
+    # - name: Plan
+    #   run: terraform plan
     - name: Plan
-      run: terraform plan
+      run: plan -out=${{ runner.temp }}/tfplan
+
+    - name: Apply
+      if: github.event_name != 'pull_request'
+      run: terraform apply ${{ runner.temp }}/tfplan
