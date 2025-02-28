@@ -15,9 +15,9 @@ terraform {
     encrypt        = true                          # Enable server-side encryption
     dynamodb_table = "terraform-lock"              # Optional: DynamoDB table for state locking
     acl            = "private"                     # S3 bucket ACL, default is "private"
-    assume_role {
-      role_arn = var.aws_terraform_arn
-    }
+    # assume_role {
+    #   role_arn = var.aws_terraform_arn
+    # }
   }
 }
 
