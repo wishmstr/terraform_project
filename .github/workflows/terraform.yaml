@@ -28,7 +28,7 @@ jobs:
     name: Terraform Plan
     runs-on: ubuntu-latest
     env:
-      TF_VAR_my_ip: ${{ secrets.TERRAFORM_IP }}
+      TF_VAR_terraform_ip: ${{ secrets.TERRAFORM_IP }}
       TF_VAR_db_username: ${{ secrets.TERRAFORM_DBUSER }}
       TF_VAR_db_password: ${{ secrets.TERRAFORM_DBPASS }}
     
