@@ -64,7 +64,7 @@ jobs:
     # - name: Plan
     #   run: terraform plan
     - name: Plan
-      run: terraform plan -out=${{ runner.temp }}/tfplan
+      run: terraform plan -destroy -out=${{ runner.temp }}/tfplan
 
     - name: Apply
       if: github.event_name != 'pull_request'
