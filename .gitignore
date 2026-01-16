@@ -16,3 +16,5 @@ secrets.tfvars
 *.tfvars
 
 .terraform.lock.hclterraform-v2/
+
+.terraform.lock.hcl
