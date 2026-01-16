@@ -16,3 +16,4 @@ secrets.tfvars
 *.tfvars
 
 .terraform.lock.hcl.github/
+terraform-v2/
