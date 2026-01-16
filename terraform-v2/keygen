@@ -1,4 +1,0 @@
-#!/bin/bash
-echo "Generating keys.  Please Wait."
-
-ssh-keygen -t rsa -b 4096 -m pem -f my_kp && openssl rsa -in my_kp -outform pem && chmod 400 my_kp.pem
