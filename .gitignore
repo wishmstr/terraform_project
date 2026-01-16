@@ -17,3 +17,4 @@ secrets.tfvars
 
 .terraform.lock.hcl.github/
 terraform-v2/
+.terraform.lock.hcl
